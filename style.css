@@ -122,6 +122,22 @@ strong {
   margin-bottom: 0.25rem;
 }
 
+h3 {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  margin-top: 2rem;
+  margin-bottom: 0.6rem;
+  color: var(--text);
+}
+
+.closing-line {
+  font-style: italic;
+  font-family: 'Lora', Georgia, serif;
+  color: var(--text-muted);
+  margin-top: 1.5rem;
+}
+
 /* Insight list */
 .insight-list {
   list-style: none;
