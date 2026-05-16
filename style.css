@@ -250,10 +250,13 @@ h3 {
 /* LP images */
 .lp-image {
   margin: 1.75rem 0;
+  width: 100%;
+  max-width: 100%;
 }
 
 .lp-image img {
   width: 100%;
+  max-width: 100%;
   height: auto;
   display: block;
   border-radius: 4px;
