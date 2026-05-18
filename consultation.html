@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free Japanese Learning Consultation — Noa JP Radio</title>
+  <meta name="description" content="The problem isn't the method. It's how you think about learning. A free, written consultation for Japanese learners who feel stuck.">
+  <meta property="og:title" content="Free Japanese Learning Consultation — Noa JP Radio">
+  <meta property="og:description" content="The problem isn't the method. It's how you think about learning.">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* ── Hero: split layout ─────────────────────────── */
+    .hero-split {
+      display: flex;
+      align-items: center;
+      gap: 3rem;
+      padding: 5rem 0 4rem;
+      border-top: none;
+    }
+
+    .hero-split .hero-text {
+      flex: 1 1 55%;
+    }
+
+    .hero-split .hero-img-wrap {
+      flex: 1 1 42%;
+      border-radius: 4px;
+      overflow: hidden;
+      aspect-ratio: 4 / 5;
+      background: var(--border);
+    }
+
+    .hero-split .hero-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* ── Loop section: numbered steps ──────────────── */
+    .step-list {
+      list-style: none;
+      margin: 2rem 0;
+      position: relative;
+    }
+
+    .step-list::before {
+      content: '';
+      position: absolute;
+      left: 1.1rem;
+      top: 0.5rem;
+      bottom: 0.5rem;
+      width: 1px;
+      background: var(--border);
+    }
+
+    .step-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 1.25rem;
+      padding: 1rem 0;
+    }
+
+    .step-num {
+      flex-shrink: 0;
+      width: 2.2rem;
+      height: 2.2rem;
+      border-radius: 50%;
+      background: var(--bg);
+      border: 1.5px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--accent);
+      position: relative;
+      z-index: 1;
+    }
+
+    .step-content strong {
+      display: block;
+      font-weight: 500;
+      margin-bottom: 0.2rem;
+    }
+
+    .step-content span {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+    }
+
+    /* ── Accent block ───────────────────────────────── */
+    .accent-block {
+      background: var(--accent);
+      color: #fff;
+      padding: 2.5rem 2rem;
+      border-radius: 4px;
+      margin: 2.5rem 0;
+    }
+
+    .accent-block p {
+      color: #fff;
+      font-family: 'Lora', Georgia, serif;
+      font-size: 1.2rem;
+      line-height: 1.55;
+      margin-bottom: 0;
+    }
+
+    .accent-block p + p {
+      margin-top: 0.75rem;
+    }
+
+    /* ── How it works: 3 steps ──────────────────────── */
+    .how-list {
+      list-style: none;
+      margin: 2rem 0;
+      counter-reset: how;
+    }
+
+    .how-list li {
+      counter-increment: how;
+      display: flex;
+      gap: 1.25rem;
+      padding: 1.5rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .how-list li:last-child {
+      border-bottom: none;
+    }
+
+    .how-list li::before {
+      content: counter(how);
+      flex-shrink: 0;
+      font-family: 'Lora', Georgia, serif;
+      font-size: 1.75rem;
+      font-weight: 600;
+      color: var(--accent);
+      line-height: 1;
+      margin-top: 0.1rem;
+      min-width: 1.5rem;
+    }
+
+    .how-list strong {
+      display: block;
+      font-weight: 500;
+      margin-bottom: 0.3rem;
+    }
+
+    .how-list p {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      margin-bottom: 0;
+    }
+
+    /* ── About strip ────────────────────────────────── */
+    .about-strip {
+      background: #F2EFE9;
+      border-radius: 4px;
+      padding: 2.5rem 2rem;
+      margin: 0;
+    }
+
+    .about-strip h2 {
+      margin-bottom: 1rem;
+    }
+
+    /* ── Mobile ─────────────────────────────────────── */
+    @media (max-width: 600px) {
+      .hero-split {
+        flex-direction: column;
+        gap: 2rem;
+        padding: 3rem 0 2.5rem;
+      }
+
+      .hero-split .hero-img-wrap {
+        width: 100%;
+        aspect-ratio: 16 / 9;
+      }
+
+      .accent-block {
+        padding: 2rem 1.5rem;
+      }
+
+      .accent-block p {
+        font-size: 1.05rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <!-- Hero -->
+    <section class="hero hero-split">
+      <div class="hero-text">
+        <p class="hero-tag">Noa JP Radio</p>
+        <h1>The problem isn't the method.<br>It's how you think about learning.</h1>
+        <p class="hero-sub">A free, written consultation for Japanese learners who feel stuck.</p>
+      </div>
+      <div class="hero-img-wrap">
+        <img src="images/consultation-hero.png" alt="">
+      </div>
+    </section>
+
+    <!-- The Loop -->
+    <section>
+      <h2>The cycle most learners never escape</h2>
+      <p>If you've been learning Japanese for a while and still feel stuck, you've probably been through this more than once:</p>
+
+      <ul class="step-list">
+        <li>
+          <span class="step-num">1</span>
+          <div class="step-content">
+            <strong>Find a new method</strong>
+            <span>A YouTube channel, an app, a textbook that someone swears by.</span>
+          </div>
+        </li>
+        <li>
+          <span class="step-num">2</span>
+          <div class="step-content">
+            <strong>Start with momentum</strong>
+            <span>It feels right. You're consistent for a few days or weeks.</span>
+          </div>
+        </li>
+        <li>
+          <span class="step-num">3</span>
+          <div class="step-content">
+            <strong>Lose traction</strong>
+            <span>Progress slows. The method stops feeling effective.</span>
+          </div>
+        </li>
+        <li>
+          <span class="step-num">4</span>
+          <div class="step-content">
+            <strong>Blame the method</strong>
+            <span>"Maybe this isn't the right approach for me."</span>
+          </div>
+        </li>
+        <li>
+          <span class="step-num">5</span>
+          <div class="step-content">
+            <strong>Search for a better one</strong>
+            <span>And the cycle starts again. Sometimes for years.</span>
+          </div>
+        </li>
+      </ul>
+
+      <p><strong>The method was never the problem.</strong></p>
+    </section>
+
+    <!-- The Reframe -->
+    <section>
+      <h2>Every popular method probably works</h2>
+      <p>Anki. Immersion. Shadowing. Textbooks. Conversation partners. Apps.</p>
+      <p>The learners who succeed with each of these aren't more talented. They didn't find the "right" method. They stopped asking <em>"is this the right method?"</em> and started asking <em>"how do I make this work for me?"</em></p>
+
+      <div class="accent-block">
+        <p>The method is not the variable.</p>
+        <p>Your relationship with learning is.</p>
+      </div>
+
+      <p>A method that seems inefficient for most learners can be exactly right for you — if it keeps you in contact with the language. And a "proven" method can completely fail if you don't understand what it's actually building.</p>
+      <p class="closing-line">That's the question I want to help you answer.</p>
+    </section>
+
+    <!-- What This Is -->
+    <section>
+      <h2>What I'm offering</h2>
+      <p>A free, written consultation for Japanese learners — available to everyone on my Substack newsletter.</p>
+
+      <ul class="how-list">
+        <li>
+          <div>
+            <strong>You fill out a short questionnaire</strong>
+            <p>Your current level, what you're doing now, where you're stuck, and what you actually want to do with Japanese.</p>
+          </div>
+        </li>
+        <li>
+          <div>
+            <strong>I read your answers</strong>
+            <p>All of them. Your specific situation — not a template.</p>
+          </div>
+        </li>
+        <li>
+          <div>
+            <strong>I write back with how I'd think about it</strong>
+            <p>A response built around my approach — shaped by learning English as a Japanese person.</p>
+          </div>
+        </li>
+      </ul>
+
+      <p style="font-size:0.9rem; color:var(--text-muted); margin-top:1.5rem;">
+        No calls. No video. Written reply within 5–7 business days.<br>
+        For Substack subscribers only — free to join.
+      </p>
+    </section>
+
+    <!-- About -->
+    <section style="padding-top:0; border-top:none;">
+      <div class="about-strip">
+        <h2>About Noa</h2>
+        <p>I'm Japanese — born and raised in Japan. I learned English not through classrooms or textbooks, but by completely changing how I thought about what "learning" means.</p>
+        <p>I don't focus on JLPT levels, grammar stages, or vocabulary counts. I focus on one thing: <strong>how much of your life is in contact with Japanese</strong> — and what's getting in the way of that.</p>
+        <p class="about-sig">— Noa</p>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+      <h2>Get the consultation — free</h2>
+      <p class="cta-sub">Subscribe to my newsletter. I'll send you the questionnaire directly.<br>No calls. No scheduling. Just a written conversation about your Japanese.</p>
+      <div class="substack-wrapper">
+        <iframe
+          src="https://noajpradio.substack.com/embed"
+          height="320"
+          frameborder="0"
+          scrolling="no">
+        </iframe>
+      </div>
+      <div class="secondary-cta">
+        <p>Already subscribed? Check your inbox for the questionnaire link.</p>
+        <a class="ebook-link" href="https://noajpradio.substack.com" target="_blank" rel="noopener">
+          Go to Noa JP Radio newsletter
+        </a>
+      </div>
+    </section>
+
+    <footer>
+      <p>© 2026 <a href="https://noajpradio.substack.com" target="_blank" rel="noopener">Noa JP Radio</a> · <a href="index.html">The Real Reason You Can't Keep Studying Japanese</a></p>
+    </footer>
+
+  </div>
+</body>
+</html>
