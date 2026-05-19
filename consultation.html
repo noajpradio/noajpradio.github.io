@@ -142,6 +142,26 @@
       display: block;
     }
 
+    .visual-card {
+      margin: 2rem 0;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      overflow: hidden;
+      background: #fff;
+    }
+
+    .visual-card img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .visual-card.is-portrait {
+      max-width: 520px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
     /* ── Loop section: numbered steps ──────────────── */
     .step-list {
       list-style: none;
@@ -383,6 +403,10 @@
         aspect-ratio: 16 / 9;
       }
 
+      .visual-card {
+        margin: 1.5rem 0;
+      }
+
       .accent-block {
         padding: 2rem 1.5rem;
       }
@@ -413,6 +437,10 @@
     <section>
       <h2>The cycle most learners never escape</h2>
       <p>If you've been learning Japanese for a while and still feel stuck, you've probably been through this more than once:</p>
+
+      <figure class="visual-card is-portrait">
+        <img src="images/consultation-loop.png" alt="A visual cycle of a Japanese learner moving through repeated study methods and losing traction." width="1122" height="1402" loading="lazy">
+      </figure>
 
       <ul class="step-list">
         <li>
@@ -459,6 +487,11 @@
     <section>
       <h2>Every popular method probably works</h2>
       <p>Anki. Immersion. Shadowing. Textbooks. Conversation partners. Apps.</p>
+
+      <figure class="visual-card">
+        <img src="images/consultation-reframe.png" alt="Study tools connected back to one open notebook, showing that learning methods need a personal relationship to work." width="1672" height="941" loading="lazy">
+      </figure>
+
       <p>The learners who succeed with each of these aren't more talented. They didn't find the "right" method. They stopped asking <em>"is this the right method?"</em> and started asking <em>"how do I make this work for me?"</em></p>
 
       <div class="accent-block">
@@ -474,6 +507,10 @@
     <section>
       <h2>What I'm offering</h2>
       <p>A free, written consultation for Japanese learners — available to newsletter subscribers who sign up by Wednesday, May 20, 2026, 11:59 PM Japan time.</p>
+
+      <figure class="visual-card is-portrait">
+        <img src="images/consultation-process.png" alt="A three-step written consultation process: questionnaire, careful reading, and a written response." width="1122" height="1402" loading="lazy">
+      </figure>
 
       <ul class="how-list">
         <li>
@@ -515,6 +552,9 @@
     <!-- CTA -->
     <section class="cta-section">
       <h2>Get the consultation — free</h2>
+      <figure class="visual-card">
+        <img src="images/consultation-deadline-card.png" alt="A calendar and sealed envelope suggesting the signup deadline and questionnaire link." width="1672" height="941" loading="lazy">
+      </figure>
       <p class="cta-sub">Subscribe by Wednesday, May 20, 2026, 11:59 PM Japan time to receive the questionnaire link.<br>No calls. No scheduling. Just a written conversation about your Japanese.</p>
       <div class="substack-wrapper">
         <iframe
