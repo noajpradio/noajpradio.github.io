@@ -100,18 +100,40 @@
     }
 
     .deadline-note {
-      border: 1px solid var(--border);
-      border-left: 3px solid var(--accent);
+      border: 1.5px solid var(--accent);
+      border-left: 5px solid var(--accent);
       border-radius: 4px;
-      padding: 1rem 1.15rem;
+      padding: 1rem 1.15rem 1.05rem;
       margin: 1.5rem 0 0;
-      background: #fff;
-      font-size: 0.92rem;
+      background: #FFF7F4;
       line-height: 1.6;
+      box-shadow: 0 8px 22px rgba(184, 58, 42, 0.08);
     }
 
-    .deadline-note strong {
+    .deadline-label {
+      display: block;
+      margin-bottom: 0.25rem;
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.11em;
+      text-transform: uppercase;
       color: var(--accent);
+    }
+
+    .deadline-date {
+      display: block;
+      font-family: 'Lora', Georgia, serif;
+      font-size: 1.08rem;
+      font-weight: 600;
+      line-height: 1.35;
+      color: var(--text);
+      margin-bottom: 0.35rem;
+    }
+
+    .deadline-detail {
+      display: block;
+      font-size: 0.92rem;
+      color: var(--text);
     }
 
     /* ── Hero: split layout ─────────────────────────── */
@@ -398,6 +420,10 @@
         margin-top: 1.25rem;
       }
 
+      .deadline-date {
+        font-size: 1rem;
+      }
+
       .hero-split .hero-img-wrap {
         width: 100%;
         aspect-ratio: 16 / 9;
@@ -426,7 +452,11 @@
         <p class="hero-tag">Noa JP Radio</p>
         <h1>The problem isn't the method.<br>It's how you think about learning.</h1>
         <p class="hero-sub">A free, written consultation for Japanese learners who feel stuck.</p>
-        <p class="deadline-note"><strong>Deadline:</strong> Wednesday, May 20, 2026, 11:59 PM Japan time. Subscribe to receive the questionnaire link.</p>
+        <p class="deadline-note">
+          <span class="deadline-label">Signup deadline</span>
+          <span class="deadline-date">Wednesday, May 20, 2026, 11:59 PM Japan time</span>
+          <span class="deadline-detail">Subscribe to receive the questionnaire link.</span>
+        </p>
       </div>
       <div class="hero-img-wrap">
         <img src="images/consultation-hero.png" alt="">
@@ -555,6 +585,11 @@
       <figure class="visual-card">
         <img src="images/consultation-deadline-card.png" alt="A calendar and sealed envelope suggesting the signup deadline and questionnaire link." width="1672" height="941" loading="lazy">
       </figure>
+      <p class="deadline-note">
+        <span class="deadline-label">Signup deadline</span>
+        <span class="deadline-date">Wednesday, May 20, 2026, 11:59 PM Japan time</span>
+        <span class="deadline-detail">Subscribe before this time to receive the questionnaire link.</span>
+      </p>
       <p class="cta-sub">Subscribe by Wednesday, May 20, 2026, 11:59 PM Japan time to receive the questionnaire link.<br>No calls. No scheduling. Just a written conversation about your Japanese.</p>
       <div class="substack-wrapper">
         <iframe
