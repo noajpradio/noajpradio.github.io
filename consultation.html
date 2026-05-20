@@ -146,6 +146,59 @@
       color: var(--text);
     }
 
+    .countdown {
+      display: block;
+      margin: 0.75rem 0 0.6rem;
+    }
+
+    .countdown-label {
+      display: block;
+      margin-bottom: 0.35rem;
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    .countdown-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.4rem;
+    }
+
+    .countdown-unit {
+      border: 1px solid rgba(184, 58, 42, 0.22);
+      border-radius: 4px;
+      background: rgba(255, 255, 255, 0.72);
+      padding: 0.45rem 0.3rem;
+      text-align: center;
+    }
+
+    .countdown-value {
+      display: block;
+      font-family: 'Lora', Georgia, serif;
+      font-size: 1.05rem;
+      font-weight: 600;
+      line-height: 1.1;
+      color: var(--text);
+    }
+
+    .countdown-name {
+      display: block;
+      margin-top: 0.1rem;
+      font-size: 0.62rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    .countdown.is-expired {
+      font-family: 'Lora', Georgia, serif;
+      font-weight: 600;
+      color: var(--accent);
+    }
+
     /* ── Hero: split layout ─────────────────────────── */
     .hero-split {
       display: flex;
@@ -543,6 +596,18 @@
         font-size: 1rem;
       }
 
+      .countdown-grid {
+        gap: 0.3rem;
+      }
+
+      .countdown-value {
+        font-size: 0.95rem;
+      }
+
+      .countdown-name {
+        font-size: 0.56rem;
+      }
+
       .hero-split .hero-img-wrap {
         width: 100%;
         aspect-ratio: 4 / 3;
@@ -578,6 +643,7 @@
         <p class="deadline-note">
           <span class="deadline-label">Signup deadline</span>
           <span class="deadline-date">Thursday, May 21, 2026, 11:59 PM Japan time</span>
+          <span class="countdown" data-deadline-countdown aria-live="polite">Calculating remaining time...</span>
           <span class="deadline-detail">Subscribe to receive the questionnaire link.</span>
         </p>
       </div>
@@ -711,6 +777,7 @@
       <p class="deadline-note">
         <span class="deadline-label">Signup deadline</span>
         <span class="deadline-date">Thursday, May 21, 2026, 11:59 PM Japan time</span>
+        <span class="countdown" data-deadline-countdown aria-live="polite">Calculating remaining time...</span>
         <span class="deadline-detail">Subscribe before this time to receive the questionnaire link.</span>
       </p>
       <p class="cta-sub">Subscribe by Thursday, May 21, 2026, 11:59 PM Japan time to receive the questionnaire link.<br>No calls. No scheduling. Just a written conversation about your Japanese.</p>
@@ -735,5 +802,50 @@
     </footer>
 
   </div>
+  <script>
+    (() => {
+      const deadline = new Date('2026-05-21T23:59:00+09:00').getTime();
+      const countdowns = document.querySelectorAll('[data-deadline-countdown]');
+      const labels = [
+        ['days', 24 * 60 * 60 * 1000],
+        ['hours', 60 * 60 * 1000],
+        ['mins', 60 * 1000],
+        ['secs', 1000]
+      ];
+
+      const render = () => {
+        let remaining = Math.max(0, deadline - Date.now());
+        const values = labels.map(([name, unit]) => {
+          const value = Math.floor(remaining / unit);
+          remaining -= value * unit;
+          return { name, value };
+        });
+
+        countdowns.forEach((countdown) => {
+          if (deadline <= Date.now()) {
+            countdown.classList.add('is-expired');
+            countdown.textContent = 'Signup deadline has passed.';
+            return;
+          }
+
+          countdown.classList.remove('is-expired');
+          countdown.innerHTML = `
+            <span class="countdown-label">Time remaining</span>
+            <span class="countdown-grid">
+              ${values.map(({ name, value }) => `
+                <span class="countdown-unit">
+                  <span class="countdown-value">${String(value).padStart(2, '0')}</span>
+                  <span class="countdown-name">${name}</span>
+                </span>
+              `).join('')}
+            </span>
+          `;
+        });
+      };
+
+      render();
+      setInterval(render, 1000);
+    })();
+  </script>
 </body>
 </html>
